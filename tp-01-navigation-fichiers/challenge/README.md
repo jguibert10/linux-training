@@ -39,9 +39,9 @@ Vous devez créer cette arborescence dans le répertoire `challenge` de ce tP.
 4. Copiez `main.sh` dans `bin` sous le nom `script.sh`.
 5. Déplacez `utils.sh` dans `docs`.
 6. Modifiez les permissions :
-   - `main.sh` et `script.sh` doivent être lisibles et exécutables uniquement par le propriétaire.
-   - `manuel.txt` doit être lisible par tous.
-7. Changez le propriétaire de tous les fichiers et répertoires en `9001:9001`.
+   - `main.sh` et `script.sh` doivent être lisibles, modifiables et exécutables par le propriétaire, et uniquement lisibles par le groupe et les autres utilisateurs.
+   - `manuel.txt` doit être uniquement lisible par tous.
+7. Changez le propriétaire de tous les fichiers et répertoires en `9001:9001`. Le nouveau groupe créé doit s'appeler "groupe9001".
 8. Utilisez `find` pour lister tous les fichiers `.sh` dans le répertoire `projet`.
 
 ## Validation

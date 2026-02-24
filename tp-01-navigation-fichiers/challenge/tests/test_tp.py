@@ -35,8 +35,8 @@ def test_permissions(host):
     script = host.file("projet/bin/script.sh")
     manuel = host.file("projet/docs/manuel.txt")
 
-    assert main.mode == 0o700
-    assert script.mode == 0o700
+    assert main.mode == 0o744
+    assert script.mode == 0o744
     assert manuel.mode & 0o444 == 0o444  # Lisible par tous
 
 def test_proprietaire(host):
@@ -51,7 +51,7 @@ def test_proprietaire(host):
         "projet/bin/script.sh",
     ]:
         fichier = host.file(path)
-        assert fichier.group == "adm"
+        assert fichier.group == "groupe9001"
 
 def test_find(host):
     cmd = host.run("find projet -name '*.sh'")
